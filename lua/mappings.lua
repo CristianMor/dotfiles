@@ -19,3 +19,7 @@ map('', '<right>', '<nop>', {noremap = true})
 map('n', '<leader>s', ':w<CR>', default_opts)
 --map('i', '<leader>s', '<C-c>:w<CR>', default_opts)
 map('n', '<leader>q', ':quit<CR>', default_opts)
+
+que onda com oests loco
+aqui nadamvos como la vez y tu que onda ?
+
