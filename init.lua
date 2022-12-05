@@ -1,19 +1,28 @@
 --[[
  INIT.LUA
---]]--
+]]--
+
+require "cr1xsh0.options"
+require "cr1xsh0.keymaps"
+require "cr1xsh0.plugins"
+require "cr1xsh0.colorscheme"
+require "cr1xsh0.feline"
+require "cr1xsh0.cmp"
+require "cr1xsh0.lsp"
+
+require('gitsigns').setup()
+--[[
+require "mappings"
+require "settings"
+require "plugins/packer"
 
 
----------------------------------------------------------------------------
--- Modulos lua
----------------------------------------------------------------------------
-require('settings')				-- configuraciones
-require('mappings')				-- mapeado de teclas
-require('plugins/packer')			-- gestor de complementos
-require('plugins/auto-save')			-- auto guardado
-
-require('plugins/foxtheme')			-- tema
-require('plugins/neo-tree')			-- explorador de archivos
-require('plugins/feline')			-- barra de estado nvim
-require('plugins/tabby')			-- barra de tabs
-require('plugins/gitsigns')			-- decoraciones de git
-require('plugins/diffview')			-- ver diff git
+require "plugins/auto-save"
+require "plugins/completation"
+require "plugins/dashboard"
+require "plugins/diffview"
+require "plugins/feline"
+require "plugins/foxtheme"
+require "plugins/gitsigns"
+require "plugins/lsp"
+]]--
