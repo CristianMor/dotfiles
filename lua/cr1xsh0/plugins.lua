@@ -89,9 +89,20 @@ return packer.startup(function(use)
 
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
-	use 'lewis6991/gitsigns.nvim'
+	use { 
+    'lewis6991/gitsigns.nvim',
+    config = function ()
+      require('gitsigns').setup()
+    end
+  }
 	use 'nvim-tree/nvim-web-devicons'
 
+  -- Busqueda difusa de archivos [[ Telescope ]] 
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  }
+
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins

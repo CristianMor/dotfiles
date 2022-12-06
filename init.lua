@@ -9,20 +9,4 @@ require "cr1xsh0.colorscheme"
 require "cr1xsh0.feline"
 require "cr1xsh0.cmp"
 require "cr1xsh0.lsp"
-
-require('gitsigns').setup()
---[[
-require "mappings"
-require "settings"
-require "plugins/packer"
-
-
-require "plugins/auto-save"
-require "plugins/completation"
-require "plugins/dashboard"
-require "plugins/diffview"
-require "plugins/feline"
-require "plugins/foxtheme"
-require "plugins/gitsigns"
-require "plugins/lsp"
-]]--
+require "cr1xsh0.telescope"
