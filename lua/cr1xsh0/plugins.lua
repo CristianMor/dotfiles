@@ -11,7 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "https://github.com/wbthomason/packer.nvim",
     install_path,
   }
-  
+
   print "Instalar packer cerrar y volver a abrir Neovim..."
 
   vim.cmd [[packadd packer.nvim]]
@@ -34,7 +34,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" } 
+      return require("packer.util").float { border = "rounded" }
     end,
   },
 }
@@ -76,7 +76,6 @@ return packer.startup(function(use)
 
   -- Tema  
   use "EdenEast/nightfox.nvim"
-    
   --[[
   use({
     'Allianaab2m/penumbra.nvim',
@@ -89,7 +88,7 @@ return packer.startup(function(use)
 
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
-	use { 
+	use {
     'lewis6991/gitsigns.nvim',
     config = function ()
       require('gitsigns').setup()
@@ -102,7 +101,13 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
   }
 
-  use 'nvim-telescope/telescope-media-files.nvim'
+  -- Highlighting nvim-treesiter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  use 'p00f/nvim-ts-rainbow'
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins

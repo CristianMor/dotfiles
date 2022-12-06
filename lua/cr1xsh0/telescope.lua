@@ -3,17 +3,13 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
-
 local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -45,7 +41,6 @@ telescope.setup {
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
-
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
@@ -79,7 +74,7 @@ telescope.setup {
       },
     },
   },
-  -- pickers = {
+  --pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -87,7 +82,7 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
-  -- },
+  --},
   extensions = {
     media_files = {
         -- filetypes whitelist
