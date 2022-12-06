@@ -45,7 +45,12 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"                    -- que el empaquetador se gestione solo
   use "nvim-lua/popup.nvim"                       -- una implementacion de la API Popop de vim en neovim
   use "nvim-lua/plenary.nvim"                     -- funciones lua utiles utilizadas en muchos plugins
-
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
   -- Completacion cmp
   use "hrsh7th/nvim-cmp"                          -- el plugin de completacion
   use "hrsh7th/cmp-buffer"                        -- buffer completacion
@@ -57,6 +62,11 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp-signature-help"
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 
+  -- auto pairs
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
   -- Snippets
   use "L3MON4D3/LuaSnip"                          -- maquiona de snippets
   use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
@@ -106,7 +116,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'p00f/nvim-ts-rainbow'
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
