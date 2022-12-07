@@ -62,6 +62,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp-signature-help"
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 
+  -- Explorador de archivosuse {
+  use {
+    'nvim-tree/nvim-tree.lua',
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
   -- auto pairs
   use {
     "windwp/nvim-autopairs",
@@ -96,15 +102,12 @@ return packer.startup(function(use)
   }) 
   ]]--
 
+  -- Git
+	use 'lewis6991/gitsigns.nvim'
+
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
-	use {
-    'lewis6991/gitsigns.nvim',
-    config = function ()
-      require('gitsigns').setup()
-    end
-  }
-	use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
 
   -- Busqueda difusa de archivos [[ Telescope ]] 
   use {
