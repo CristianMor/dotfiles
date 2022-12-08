@@ -89,6 +89,7 @@ return packer.startup(function(use)
 
   -- Tema  
   use "EdenEast/nightfox.nvim"
+
   --[[
   use({
     'Allianaab2m/penumbra.nvim',
@@ -101,6 +102,9 @@ return packer.startup(function(use)
 
   -- Git
 	use 'lewis6991/gitsigns.nvim'
+
+  -- Bufferline
+  use {'akinsho/bufferline.nvim', tag = "v3.*"}
 
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
@@ -117,7 +121,6 @@ return packer.startup(function(use)
     run = ':TSUpdate'
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'p00f/nvim-ts-rainbow'
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
