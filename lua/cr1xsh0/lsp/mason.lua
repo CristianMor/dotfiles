@@ -1,6 +1,7 @@
 local servers = {
 	"sumneko_lua",
   "tsserver",
+  "intelephense",
 }
 
 local settings = {
@@ -17,6 +18,7 @@ local settings = {
 }
 
 require("mason").setup(settings)
+
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,

@@ -1,5 +1,6 @@
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
+  print("A ocurrido un problema con la instalacion de lspconfig")
   return
 end
 

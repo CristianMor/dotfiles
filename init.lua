@@ -1,6 +1,6 @@
 --[[
  INIT.LUA
-]]--
+]] --
 
 require "cr1xsh0.options"
 require "cr1xsh0.keymaps"
@@ -16,3 +16,4 @@ require "cr1xsh0.comment"
 require "cr1xsh0.gitsigns"
 require "cr1xsh0.nvim-tree"
 require "cr1xsh0.buffline"
+require "cr1xsh0.null-ls"
