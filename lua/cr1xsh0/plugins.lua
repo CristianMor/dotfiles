@@ -122,6 +122,9 @@ return packer.startup(function(use)
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  -- CR1XHS0 dashboard
+  use 'glepnir/dashboard-nvim'
+
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then
