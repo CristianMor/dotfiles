@@ -1,6 +1,5 @@
 -- vim.cmd "colorscheme default"
 --
-
 local colorscheme = "nordfox"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
@@ -13,8 +12,5 @@ end
 require('nightfox').setup({
   options = {
     transparent = true,
-    styles = {
-      comments = "italic",
-    } 
   }
 })
