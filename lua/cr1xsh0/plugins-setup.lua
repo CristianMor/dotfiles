@@ -37,10 +37,6 @@ return packer.startup(function(use)
 
   -- Tema  
   use "EdenEast/nightfox.nvim"
-
-  -- Explorador de archivos
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
   --
   --use({
   --    'Allianaab2m/penumbra.nvim',
@@ -49,6 +45,13 @@ return packer.startup(function(use)
   --    vim.api.nvim_command('colorscheme penumbra')
   --  end
   --}) 
+
+  -- Explorador de archivos
+  use 'nvim-tree/nvim-tree.lua'
+  use 'nvim-tree/nvim-web-devicons'
+
+  -- Neovim estatus baar
+  use 'feline-nvim/feline.nvim'
 
   -- Plugins esenciales
   use "tpope/vim-surround"

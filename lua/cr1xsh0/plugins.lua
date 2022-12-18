@@ -39,9 +39,6 @@
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
 
-  -- Neovim estatus baar
-  use 'feline-nvim/feline.nvim'
-
   -- Busqueda difusa de archivos [[ Telescope ]] 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',

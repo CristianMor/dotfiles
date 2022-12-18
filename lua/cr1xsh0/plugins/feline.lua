@@ -1,3 +1,9 @@
+local status, feline = pcall(require, "feline")
+if not status then
+  print "Algo esta mal al querer usar feline"
+  return 
+end
+
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
 
@@ -380,7 +386,7 @@ components.active[3][10] = {
 	right_sep = ' '
 }
 
-require('feline').setup({
+feline.setup({
   theme = colors,
   default_bg = bg,
   default_fg = fg,
@@ -388,3 +394,4 @@ require('feline').setup({
   components = components,
   force_inactive = force_inactive,
 })
+

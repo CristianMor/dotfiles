@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
     url = "https://github.com/vim-scripts/ReplaceWithRegister"
   },
+  ["feline.nvim"] = {
+    loaded = true,
+    path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
+  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
