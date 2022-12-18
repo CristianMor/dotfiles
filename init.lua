@@ -8,3 +8,4 @@ require "cr1xsh0.core.keymaps"
 require "cr1xsh0.core.colorscheme"
 --
 
+require "cr1xsh0.plugins-setup"
