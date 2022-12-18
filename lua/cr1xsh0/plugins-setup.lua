@@ -46,6 +46,10 @@ return packer.startup(function(use)
   --  end
   --}) 
 
+  -- Plugins esenciales
+  use "tpope/vim-surround"
+  use "vim-scripts/ReplaceWithRegister"
+
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then
