@@ -1,14 +1,7 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
--- acortar el nombre de la funcion
-local keymap = vim.api.nvim_set_keymap
-
 -- space como clave lider
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+
+local keymap = vim.keymap        -- acortar el nombre de la funcion
 
 -- Modos
 --   normal_mode = "n",
@@ -21,57 +14,57 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- guardar / salir rapido
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<leader>qa", ":quitall<CR>", opts)
+keymap.set("n", "<leader>w", ":w<CR>")
+keymap.set("n", "<leader>q", ":q<CR>")
+keymap.set("n", "<leader>qa", ":quitall<CR>")
 
 -- mejora de la navegacion por las ventanas
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
+keymap.set("n", "<C-l>", "<C-w>l")
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- redimencionar con flechas
-keymap("n", "<A-Up>", ":resize +2<CR>", opts)
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-Down>", ":resize -2<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
+keymap.set("n", "<A-Up>", ":resize +2<CR>")
+keymap.set("n", "<A-Left>", ":vertical resize -2<CR>")
+keymap.set("n", "<A-Down>", ":resize -2<CR>")
+keymap.set("n", "<A-Right>", ":vertical resize +2<CR>")
 
 -- navegar por los buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap.set("n", "<S-l>", ":bnext<CR>")
+keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 -- Insertar --
 -- pulsar jk rapido para entrar
-keymap("i", "jk", "<ESC>", opts)
+keymap.set("i", "jk", "<ESC>")
 
 -- Visual --
 -- permanecer en modo sangria
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
 
 -- mover el texto hacia arriba y hacia abajo
-keymap("v", "<C-j>", ":m .+1<CR>==", opts)
-keymap("v", "<C-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+keymap.set("v", "<C-j>", ":m .+1<CR>==")
+keymap.set("v", "<C-k>", ":m .-2<CR>==")
+keymap.set("v", "p", '"_dP')
 
 -- Visual Block --
 -- mover el texto hacia arriba y hacia abajo
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+keymap.set("x", "J", ":move '>+1<CR>gv-gv")
+keymap.set("x", "K", ":move '<-2<CR>gv-gv")
+keymap.set("x", "<C-j>", ":move '>+1<CR>gv-gv")
+keymap.set("x", "<C-k>", ":move '<-2<CR>gv-gv")
 
 -- Terminal --
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope buscador
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>ob", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+keymap.set("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+keymap.set("n", "<leader>ob", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+keymap.set("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
