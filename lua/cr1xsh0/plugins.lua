@@ -41,20 +41,7 @@
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
   })
-
-  -- Tema  
-  use "EdenEast/nightfox.nvim"
-
-  --
-  --use({
-  --    'Allianaab2m/penumbra.nvim',
-  --    config = function()
-  --    require('penumbra').setup()
-  --    vim.api.nvim_command('colorscheme penumbra')
-  --  end
-  --}) 
-
-
+ 
   -- Git
 	use 'lewis6991/gitsigns.nvim'
 
