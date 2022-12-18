@@ -53,6 +53,10 @@ return packer.startup(function(use)
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
 
+  -- Busqueda difusa de archivos [[ Telescope ]] 
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+
   -- Plugins esenciales
   use "tpope/vim-surround"
   use "vim-scripts/ReplaceWithRegister"

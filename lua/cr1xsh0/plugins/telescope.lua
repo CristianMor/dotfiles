@@ -3,7 +3,10 @@ if not status_ok then
   return
 end
 
-local actions = require "telescope.actions"
+local actions_status, actions = pcall(require, "telescope.actions")
+if not actions_status then
+  return
+end
 
 telescope.setup {
   defaults = {
@@ -97,3 +100,5 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+telescope.load_extension("fzf")

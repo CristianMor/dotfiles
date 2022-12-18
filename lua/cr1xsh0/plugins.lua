@@ -39,10 +39,6 @@
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
 
-  -- Busqueda difusa de archivos [[ Telescope ]] 
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  }
 
   -- Highlighting nvim-treesiter
   use {
