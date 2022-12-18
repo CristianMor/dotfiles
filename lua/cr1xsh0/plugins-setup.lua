@@ -63,6 +63,16 @@ return packer.startup(function(use)
 
   use "numToStr/Comment.nvim"
 
+  -- Completacion cmp
+  use "hrsh7th/nvim-cmp"                          -- el plugin de completacion
+  use "hrsh7th/cmp-buffer"                        -- buffer completacion
+  use "hrsh7th/cmp-path"                          -- path completacion
+
+  -- Snippets
+  use "L3MON4D3/LuaSnip"                          -- maquiona de snippets
+  use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
+  use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
+
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then

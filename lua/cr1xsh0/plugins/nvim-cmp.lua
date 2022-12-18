@@ -8,7 +8,10 @@ if not snip_status_ok then
   return
 end
 
+-- cargar los friendly-snippets 
 require("luasnip/loaders/from_vscode").lazy_load()
+
+vim.opt.completeopt = "menu,menuone,noselect"
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -45,7 +48,8 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.setup {
+
+cmp.setup{
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -62,6 +66,7 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
+
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
@@ -94,6 +99,11 @@ cmp.setup {
       "s",
     }),
   },
+  sources = {
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -112,15 +122,6 @@ cmp.setup {
       return vim_item
     end,
   },
-  sources = {
-    --{ name = "emoji" },
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
-    { name = "nvim_lsp_signature_help"},
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-  },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -133,3 +134,4 @@ cmp.setup {
     native_menu = false,
   },
 }
+

@@ -1,24 +1,16 @@
   use "nvim-lua/popup.nvim"                       -- una implementacion de la API Popop de vim en neovim
 
-  -- Completacion cmp
-  use "hrsh7th/nvim-cmp"                          -- el plugin de completacion
-  use "hrsh7th/cmp-buffer"                        -- buffer completacion
-  use "hrsh7th/cmp-path"                          -- path completacion
   use "hrsh7th/cmp-cmdline"                       -- cmpline completacion
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   --use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lsp-signature-help"
-  use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 
   -- auto pairs
   use {
     "windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
   }
-  -- Snippets
-  use "L3MON4D3/LuaSnip"                          -- maquiona de snippets
-  use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
 
   -- LSP 
   use "neovim/nvim-lspconfig"                     -- habilitar LSP
