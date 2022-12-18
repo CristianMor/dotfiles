@@ -33,6 +33,7 @@ packer.init {
 return packer.startup(function(use)
 
   use "wbthomason/packer.nvim"                    -- que el empaquetador se gestione solo
+  use "nvim-lua/plenary.nvim"                     -- funciones lua utiles utilizadas en muchos plugins
 
   -- Tema  
   use "EdenEast/nightfox.nvim"
@@ -49,6 +50,8 @@ return packer.startup(function(use)
   -- Plugins esenciales
   use "tpope/vim-surround"
   use "vim-scripts/ReplaceWithRegister"
+
+  use "numToStr/Comment.nvim"
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
