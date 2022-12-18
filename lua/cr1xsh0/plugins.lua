@@ -1,5 +1,4 @@
   use "nvim-lua/popup.nvim"                       -- una implementacion de la API Popop de vim en neovim
-  use "nvim-lua/plenary.nvim"                     -- funciones lua utiles utilizadas en muchos plugins
   use {
       'numToStr/Comment.nvim',
       config = function()
