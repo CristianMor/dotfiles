@@ -11,6 +11,9 @@ if not config_status_ok then
     return
 end
 
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {

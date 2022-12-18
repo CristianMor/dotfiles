@@ -1,10 +1,5 @@
   use "nvim-lua/popup.nvim"                       -- una implementacion de la API Popop de vim en neovim
-  use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
-  }
+
   -- Completacion cmp
   use "hrsh7th/nvim-cmp"                          -- el plugin de completacion
   use "hrsh7th/cmp-buffer"                        -- buffer completacion
@@ -15,9 +10,6 @@
   --use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lsp-signature-help"
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
-
-  -- Explorador de archivosuse {
-  use 'nvim-tree/nvim-tree.lua'
 
   -- auto pairs
   use {
@@ -49,7 +41,6 @@
 
   -- Neovim estatus baar
   use 'feline-nvim/feline.nvim'
-  use 'nvim-tree/nvim-web-devicons'
 
   -- Busqueda difusa de archivos [[ Telescope ]] 
   use {

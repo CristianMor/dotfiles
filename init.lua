@@ -10,3 +10,4 @@ require "cr1xsh0.core.colorscheme"
 
 require "cr1xsh0.plugins-setup"
 require "cr1xsh0.plugins.comment"
+require "cr1xsh0.plugins.nvim-tree"

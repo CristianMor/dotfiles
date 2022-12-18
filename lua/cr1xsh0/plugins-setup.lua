@@ -38,6 +38,9 @@ return packer.startup(function(use)
   -- Tema  
   use "EdenEast/nightfox.nvim"
 
+  -- Explorador de archivos
+  use 'nvim-tree/nvim-tree.lua'
+  use 'nvim-tree/nvim-web-devicons'
   --
   --use({
   --    'Allianaab2m/penumbra.nvim',
