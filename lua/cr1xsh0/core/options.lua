@@ -2,7 +2,35 @@
 --[[ :help options ]]--
 --
 
+-- local opt = vim.opt                            -- para ser más concisos
+--
+-- -- linea de numeros
+-- opt.relativenumber = true
+-- opt.number = true
+--
+-- -- tabs & indentation
+-- opt.tabstop = 2
+-- opt.shiftwidth = 2
+-- opt.expandtab = true
+-- opt.autoindent = true
+--
+-- -- line wrapping
+-- opt.wrap = true
+--
+-- -- search settings
+-- opt.ignorecase = true
+--
+--
+
 local options = {
+  relativenumber = true,
+  number = true,
+  tabstop = 2,
+  shiftwidth = 2,
+  expandtab = true,
+  autoindent = true,
+  wrap = true,
+  ignorecase = true,
   backup = false,				                       -- crear archivos de respaldo
   clipboard = 'unnamedplus',			             -- permitir a neovim el acceso al portapapeles
   --cmdheight = 2,				                     -- mas espacio en la line de comandos de neovim para mostrar mensajes
@@ -25,15 +53,8 @@ local options = {
   undofile = true,				                     -- habilitar el deshacer persistente
   updatetime = 300, 				                   -- finalizacion mas rapida (4000ms por defecto)
   writebackup = false, 			                   -- si un archivo esta siendo editado por otro programa (o se escribio en el archivo mientras se editaba con otro programa), nose permite la edicion
-  expandtab = true,				                     -- convertir tabuladores en espacios
-  shiftwidth = 2,				                       -- el numero de espacios insertados para cada sangria
-  tabstop = 2,                                 -- insertar 2 espacios para un tabulador
   cursorline = true,                           -- resalta la linea actual
-  number = true,                               -- establecer lineas numeradas
-  relativenumber = true,                       -- establecer lineas numeradas relativas
-  numberwidth = 2,                             -- establecer el ancho de la columna numerica a 2 (4 por defecto) 
   signcolumn = "yes",                          -- mostrar siempre la columna de signos, de lo contrario se desplazaria el texto cada vez 
-  wrap = true,                                -- mostrar las lineas como una sola linea larga
   scrolloff = 8,                               -- es uno de mis favoritos
   sidescrolloff = 8,
   guifont = "Monaco:h10",                      -- la fuente utilizada en las aplicaciones graficas de neovim

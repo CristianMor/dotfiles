@@ -2,10 +2,14 @@
  INIT.LUA
 ]] --
 
-require "cr1xsh0.options"
-require "cr1xsh0.keymaps"
+-- CORE 
+require "cr1xsh0.core.options"
+require "cr1xsh0.core.keymaps"
+require "cr1xsh0.core.colorscheme"
+--
+
+--
 require "cr1xsh0.plugins"
-require "cr1xsh0.colorscheme"
 require "cr1xsh0.feline"
 require "cr1xsh0.cmp"
 require "cr1xsh0.lsp"
