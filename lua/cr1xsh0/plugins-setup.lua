@@ -73,6 +73,16 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 
+  -- gestión e instalación de los servidores lsp 
+  use "williamboman/mason.nvim"                   -- Instalador de servidores de idiomas fácil de usar
+  use "williamboman/mason-lspconfig.nvim"         -- instalador de servidores de idiomas fácil de usar
+
+  -- configuración de los servidores lsp
+  use "neovim/nvim-lspconfig"                     -- habilitar LSP
+  use "hrsh7th/cmp-nvim-lsp"                      
+  use { "glepnir/lspsaga.nvim", branch = "main" }
+  use "jose-elias-alvarez/typescript.nvim"           -- diagnóstico de LSP y acciones de código
+  
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then

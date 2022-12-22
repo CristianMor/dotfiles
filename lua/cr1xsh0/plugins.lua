@@ -1,7 +1,6 @@
   use "nvim-lua/popup.nvim"                       -- una implementacion de la API Popop de vim en neovim
 
   use "hrsh7th/cmp-cmdline"                       -- cmpline completacion
-  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   --use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lsp-signature-help"
@@ -13,10 +12,6 @@
   }
 
   -- LSP 
-  use "neovim/nvim-lspconfig"                     -- habilitar LSP
-  use "williamboman/mason.nvim"                   -- Instalador de servidores de idiomas fácil de usar
-  use "williamboman/mason-lspconfig.nvim"         -- instalador de servidores de idiomas fácil de usar
-  use "jose-elias-alvarez/null-ls.nvim"           -- diagnóstico de LSP y acciones de código
 
 
   -- Preview archivos markdown
