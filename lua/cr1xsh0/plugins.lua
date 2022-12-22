@@ -20,9 +20,6 @@
       run = function() vim.fn["mkdp#util#install"]() end,
   })
  
-  -- Git
-	use 'lewis6991/gitsigns.nvim'
-
   -- Bufferline
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
 

@@ -83,6 +83,9 @@ return packer.startup(function(use)
   use { "glepnir/lspsaga.nvim", branch = "main" }
   use "jose-elias-alvarez/typescript.nvim"           -- diagnóstico de LSP y acciones de código
   
+  -- Git
+	use 'lewis6991/gitsigns.nvim'
+
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then
