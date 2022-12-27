@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"                      
   use { "glepnir/lspsaga.nvim", branch = "main" }
   use "jose-elias-alvarez/typescript.nvim"           -- diagnóstico de LSP y acciones de código
+  use "onsails/lspkind.nvim"
   
   -- Git
 	use 'lewis6991/gitsigns.nvim'
