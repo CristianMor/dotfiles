@@ -79,6 +79,11 @@ lspconfig["cssls"].setup({
   on_attach = on_attach
 })
 
+lspconfig["intelephense"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
 -- local M = {}
 -- -- TODO: backfill this to template
 -- M.setup = function()
