@@ -68,7 +68,7 @@ lspconfig["html"].setup({
 })
 
 typescript.setup({
-  server {
+  server = {
     capabilities = capabilities,
     on_attach = on_attach
   }
@@ -82,6 +82,24 @@ lspconfig["cssls"].setup({
 lspconfig["intelephense"].setup({
   capabilities = capabilities,
   on_attach = on_attach
+})
+
+lspconfig["sumneko_lua"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = { -- configuraciones personalizada para lua 
+    -- hacer que el lenguaje del servidor reconozca vim global
+    diagnostics = {
+      globals = { "vim" },
+    },
+    workspace = {
+      -- hacer que el servidor de lenguajes conozca los archivos de ejecución
+      library = {
+        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+        [vim.fn.expand("config") .. "/lua"] = true,
+      }
+    }
+  }
 })
 
 -- local M = {}
