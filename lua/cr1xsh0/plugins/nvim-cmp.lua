@@ -8,6 +8,11 @@ if not snip_status_ok then
   return
 end
 
+local lspkind_status, lspkind = pcall(require, "lspkind")
+if not lspkind_status then
+  print "Ocurrido un problema con lspkind"
+  return
+end
 -- cargar los friendly-snippets 
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -46,6 +51,7 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
+
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 
@@ -100,27 +106,33 @@ cmp.setup{
     }),
   },
   sources = {
-    { name = "luasnip" },
+    { name = "nvim_lsp" }, -- lsp
+    { name = "luasnip" },  -- snippets
     { name = "buffer" },
     { name = "path" },
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      vim_item.menu = ({
-        --emoji = "[Emoji]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[NVIM_LUA]",
-        nvim_lsp_signature_help = "[NVSIGNATURE]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
-    end,
+    format = lspkind.cmp_format({
+      maxwidth = 50,
+      ellipsis_char = "...",
+      symbol_map = kind_icons
+    })
+    -- format = function(entry, vim_item)
+    --   -- Kind icons
+    --   vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+    --   -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+    --   vim_item.menu = ({
+    --     --emoji = "[Emoji]",
+    --     nvim_lsp = "[LSP]",
+    --     nvim_lua = "[NVIM_LUA]",
+    --     nvim_lsp_signature_help = "[NVSIGNATURE]",
+    --     luasnip = "[Snippet]",
+    --     buffer = "[Buffer]",
+    --     path = "[Path]",
+    --   })[entry.source.name]
+    --   return vim_item
+    -- end,
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

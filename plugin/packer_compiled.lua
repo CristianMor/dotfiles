@@ -123,6 +123,7 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
