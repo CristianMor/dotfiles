@@ -20,21 +20,21 @@ local keymap = vim.keymap
 
 -- habilitar combinaciones de teclas para el servidor lsp disponible
 local on_attach = function(client, bufnr)
-  local opts = { noremap = true, silent = true }
 
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+  local opts = { noremap = true, silent = true, buffer = bufnr}
+
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  keymap.set("n", "<leader>]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
@@ -51,7 +51,7 @@ local on_attach = function(client, bufnr)
   --
 
   if client.name == "tsserver" then
-    nvim.api.nvim_buf_set_keymap("n", "<leader>rf", ":TypescriptRenameFile<CR>")
+    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
     -- client.server_capabilities.documentFormattingProvider = false
   end
 
@@ -63,25 +63,43 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 lspconfig["html"].setup({
-  capabilities = capabilities, 
+  capabilities = capabilities,
   on_attach = on_attach
 })
 
 typescript.setup({
-  server {
+  server = {
     capabilities = capabilities,
     on_attach = on_attach
   }
 })
 
 lspconfig["cssls"].setup({
-  capabilities = capabilities, 
+  capabilities = capabilities,
   on_attach = on_attach
 })
 
 lspconfig["intelephense"].setup({
   capabilities = capabilities,
   on_attach = on_attach
+})
+
+lspconfig["sumneko_lua"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = { -- configuraciones personalizada para lua 
+    -- hacer que el lenguaje del servidor reconozca vim global
+    diagnostics = {
+      globals = { "vim" },
+    },
+    workspace = {
+      -- hacer que el servidor de lenguajes conozca los archivos de ejecución
+      library = {
+        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+        [vim.fn.expand("config") .. "/lua"] = true,
+      }
+    }
+  }
 })
 
 -- local M = {}

@@ -15,4 +15,9 @@ require "cr1xsh0.plugins.feline"
 require "cr1xsh0.plugins.telescope"
 require "cr1xsh0.plugins.nvim-cmp"
 require "cr1xsh0.plugins.lsp.mason"
+<<<<<<< HEAD
 require "cr1xsh0.plugins.gitsigns"
+=======
+require "cr1xsh0.plugins.lsp.lspsaga"
+require "cr1xsh0.plugins.lsp.handlers"
+>>>>>>> lsp

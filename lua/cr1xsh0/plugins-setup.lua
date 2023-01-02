@@ -79,13 +79,16 @@ return packer.startup(function(use)
 
   -- configuración de los servidores lsp
   use "neovim/nvim-lspconfig"                     -- habilitar LSP
-  use "hrsh7th/cmp-nvim-lsp"                      
+  use "hrsh7th/cmp-nvim-lsp"
   use { "glepnir/lspsaga.nvim", branch = "main" }
   use "jose-elias-alvarez/typescript.nvim"           -- diagnóstico de LSP y acciones de código
   use "onsails/lspkind.nvim"
+<<<<<<< HEAD
   
   -- Git
 	use 'lewis6991/gitsigns.nvim'
+=======
+>>>>>>> lsp
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
