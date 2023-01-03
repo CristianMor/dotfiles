@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"                          -- path completacion
 
   -- Snippets
-  use "L3MON4D3/LuaSnip"                          -- maquiona de snippets
+  use "L3MON4D3/LuaSnip"                          -- maquina de snippets
   use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 

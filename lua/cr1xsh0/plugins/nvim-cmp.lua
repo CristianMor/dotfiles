@@ -1,16 +1,18 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
+  print "Exite un problema con cmp"
   return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
+  print "Existe un problema con luasnip"
   return
 end
 
 local lspkind_status, lspkind = pcall(require, "lspkind")
 if not lspkind_status then
-  print "Ocurrido un problema con lspkind"
+  print "Existe un problema con lspkind"
   return
 end
 -- cargar los friendly-snippets 
@@ -55,7 +57,7 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 
-cmp.setup{
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -145,5 +147,4 @@ cmp.setup{
     ghost_text = true,
     native_menu = false,
   },
-}
-
+})
