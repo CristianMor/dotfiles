@@ -73,7 +73,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"              -- un montón de fragmentos para usar
   use "saadparwaiz1/cmp_luasnip"                  -- snippet completacion
 
-  -- gestión e instalación de los servidores lsp 
+  -- gestión e instalación de los servidores lsp, linters y formateos
   use "williamboman/mason.nvim"                   -- Instalador de servidores de idiomas fácil de usar
   use "williamboman/mason-lspconfig.nvim"         -- instalador de servidores de idiomas fácil de usar
 
@@ -86,6 +86,10 @@ return packer.startup(function(use)
 
   -- Git
 	use 'lewis6991/gitsigns.nvim'
+
+  -- Formateo y linting
+  use "jose-elias-alvarez/null-ls.nvim"           -- diagnóstico de LSP y acciones de código
+  use "jayp0521/mason-null-ls.nvim"
 
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
