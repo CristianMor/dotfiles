@@ -37,15 +37,6 @@ return packer.startup(function(use)
   -- Tema  
   use "EdenEast/nightfox.nvim"
 
-  --
-  --use({
-  --    'Allianaab2m/penumbra.nvim',
-  --    config = function()
-  --    require('penumbra').setup()
-  --    vim.api.nvim_command('colorscheme penumbra')
-  --  end
-  --}) 
-
   -- Establecer automaticamente su configuracion despues de clonar packer.nvim
   -- poner esto al dinal despues de todos los plugins
   if PACKER_BOOTSTRAP then
