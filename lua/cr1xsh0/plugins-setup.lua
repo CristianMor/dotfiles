@@ -90,6 +90,10 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Auto closing
+	use("windwp/nvim-autopairs")
+	use("windwp/nvim-ts-autotag")
+
 	-- Establecer automaticamente su configuracion despues de clonar packer.nvim
 	-- poner esto al dinal despues de todos los plugins
 	if PACKER_BOOTSTRAP then
