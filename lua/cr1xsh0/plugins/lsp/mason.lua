@@ -1,19 +1,19 @@
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
-  print "Ocurrio un problema con mason"
-  return
+	print("Ocurrio un problema con mason")
+	return
 end
 
 local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status then
-  print "Ocurrio un problema con mason_lspconfig"
-  return
+	print("Ocurrio un problema con mason_lspconfig")
+	return
 end
 
 local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
 if not mason_null_ls_status then
-  print "Ocurrio un problema con mason_null_ls"
-  return
+	print("Ocurrio un problema con mason_null_ls")
+	return
 end
 
 local settings = {
@@ -32,23 +32,24 @@ local settings = {
 mason.setup(settings)
 
 local servers = {
-  "tsserver",
-  "html",
-  "cssls",
+	"tsserver",
+	"html",
+	"cssls",
 	"sumneko_lua",
-  "intelephense",
+	"intelephense",
+	"jdtls",
 }
 
-mason_lspconfig.setup {
-  ensure_installed = servers,
-}
+mason_lspconfig.setup({
+	ensure_installed = servers,
+})
 
 local servers_null_ls = {
-  "prettier",
-  "stylua",
-  "eslint_d",
+	"prettier",
+	"stylua",
+	"eslint_d",
 }
 
-mason_null_ls.setup {
-  ensure_installed = servers_null_ls
-}
+mason_null_ls.setup({
+	ensure_installed = servers_null_ls,
+})
