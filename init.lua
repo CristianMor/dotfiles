@@ -1,6 +1,8 @@
+
+require("base");
+require("highlights");
 --[[
  INIT.LUA
-]]
 --
 
 -- CORE
@@ -22,3 +24,4 @@ require("cr1xsh0.plugins.lsp.handlers")
 require("cr1xsh0.plugins.lsp.null-ls")
 require("cr1xsh0.plugins.auto-pairs")
 require("cr1xsh0.plugins.treesitter")
+]]
