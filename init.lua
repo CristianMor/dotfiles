@@ -1,11 +1,16 @@
 
-require("base");
-require("highlights");
 --[[
  INIT.LUA
+]]
 --
 
 -- CORE
+require("base");
+require("highlights");
+require("maps");
+
+--[[
+ INIT.LUA
 require("cr1xsh0.core.options")
 require("cr1xsh0.core.keymaps")
 require("cr1xsh0.core.colorscheme")
