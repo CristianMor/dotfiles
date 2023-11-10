@@ -3,15 +3,14 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
-local on_attach = function(client, bufnr)
-  if client.server_capibilities.documentFormattingProvider then
+ local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     vim.api.nvim_command [[augroup END]]
   end
 end
-
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -29,6 +28,9 @@ nvim_lsp.lua_ls.setup {
             -- Tell the language server which version of Lua you're using
             -- (most likely LuaJIT in the case of Neovim)
             version = 'LuaJIT'
+          },
+          diagnostics = {
+            globals = { 'vim' }
           },
           -- Make the server aware of Neovim runtime files
           workspace = {
