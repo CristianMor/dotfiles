@@ -12,9 +12,9 @@ lualine.setup {
     -- Tema de la barra de estado
     theme = 'solarized_dark',
     -- Separadores de secciones
-    section_separators = { left = "left", right = "right" },
+    section_separators = { left = "", right = "" },
     -- Separadores de componentes dentro de las secciones
-    component_separators = { left = "left", right = "right" },
+    component_separators = { left = "", right = "" },
     -- Tipos de archivo deshabilitados para la barra de estado
     disabled_filetypes = {}
   },
@@ -31,7 +31,7 @@ lualine.setup {
     },
     -- Sección 'lualine_x' con diagnósticos, codificación y tipo de archivo
     lualine_x = {
-      { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = "error", warn = "warn", info = "info", hint = "hint"} },
+      { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = " ", warn = " ", info = " ", hint = " "} },
       'encoding',
       'filetype'
     },

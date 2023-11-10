@@ -13,6 +13,7 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use 'hoob3rt/lualine.nvim'
+	use("nvim-tree/nvim-web-devicons")
+	use("feline-nvim/feline.nvim") -- Neovim estatus baar
   use 'neovim/nvim-lspconfig'
 end)
