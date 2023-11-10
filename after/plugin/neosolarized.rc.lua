@@ -5,7 +5,7 @@ if (not status) then
 end
 
 -- Configuración del tema 'neosolarized'
-n.setup({ commit_italics = true })
+n.setup({ comment_italics = true })
 
 -- Importar el módulo 'colorbuddy' y definir colores y grupos de resaltado
 local colorbuddy = require('colorbuddy.init')
