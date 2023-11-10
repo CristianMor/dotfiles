@@ -13,10 +13,12 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-	use "nvim-tree/nvim-web-devicons"
+	use "nvim-tree/nvim-web-devicons" -- File icons
+  use "L3MON4D3/LuaSnip" -- Snippet
 	use "feline-nvim/feline.nvim" -- Neovim estatus baar
   use 'onsails/lspkind-nvim' -- vscode-like pirctograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for burffer words
+	use "hrsh7th/cmp-path" -- path completacion
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completation
   use 'neovim/nvim-lspconfig' -- LSP
