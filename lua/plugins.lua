@@ -32,4 +32,6 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
+
+  use 'akinsho/nvim-bufferline.lua'
 end)
