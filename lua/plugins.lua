@@ -13,7 +13,7 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-	use "nvim-tree/nvim-web-devicons" -- File icons
+  use 'kyazdani42/nvim-web-devicons' -- File icons
   use "L3MON4D3/LuaSnip" -- Snippet
 	use "feline-nvim/feline.nvim" -- Neovim estatus baar
   use 'onsails/lspkind-nvim' -- vscode-like pirctograms
