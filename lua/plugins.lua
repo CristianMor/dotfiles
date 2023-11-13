@@ -30,6 +30,9 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use a Nevovim as a language server to inject LSP diagnostics, code actions and more via Lua.
+  use 'MunifTanjim/Prettier.nvim' -- Prettier plugin for Neovim's built-in
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 

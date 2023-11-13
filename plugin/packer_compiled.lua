@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["Prettier.nvim"] = {
+    loaded = true,
+    path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/Prettier.nvim",
+    url = "https://github.com/MunifTanjim/Prettier.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -120,6 +125,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
     url = "https://github.com/svrana/neosolarized.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/dev-mobile/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
