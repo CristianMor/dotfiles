@@ -23,6 +23,10 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completation
   use 'neovim/nvim-lspconfig' -- LSP
   use {
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+  }
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
@@ -34,4 +38,5 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 
   use 'akinsho/nvim-bufferline.lua'
+  use 'norcalli/nvim-colorizer.lua'
 end)

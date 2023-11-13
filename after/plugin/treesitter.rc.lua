@@ -15,7 +15,9 @@ ts.setup {
     'tsx',
     'lua',
     'json',
-    'css'
+    'css',
+    'markdown',
+    'markdown_inline'
   },
   autotag = {
     enable = true
