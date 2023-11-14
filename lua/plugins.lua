@@ -33,6 +33,9 @@ packer.startup(function(use)
 
   use 'jose-elias-alvarez/null-ls.nvim' -- Use a Nevovim as a language server to inject LSP diagnostics, code actions and more via Lua.
   use 'MunifTanjim/Prettier.nvim' -- Prettier plugin for Neovim's built-in
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
@@ -42,5 +45,7 @@ packer.startup(function(use)
 
   use 'akinsho/nvim-bufferline.lua'
   use 'norcalli/nvim-colorizer.lua'
+
   use 'lewis6991/gitsigns.nvim'
+  use 'dinhhuy258/git.nvim' -- For git blame & browser
 end)
