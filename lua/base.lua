@@ -7,7 +7,8 @@ vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
 -- Mostrar números de línea en la ventana actual
-vim.wo.number = true
+vim.opt.relativenumber = true
+vim.opt.number = true
 
 -- Habilitar opciones de Vim
 vim.opt.title = true -- Mostrar el título de la ventana

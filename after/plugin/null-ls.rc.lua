@@ -15,5 +15,5 @@ null_ls.setup {
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
     null_ls.builtins.diagnostics.fish
-  }
+  },
 }
