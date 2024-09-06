@@ -26,9 +26,13 @@ packer.startup(function(use)
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
   }
+
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+     run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end
   }
 
   use 'jose-elias-alvarez/null-ls.nvim' -- Use a Nevovim as a language server to inject LSP diagnostics, code actions and more via Lua.
