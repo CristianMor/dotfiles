@@ -11,15 +11,15 @@ ts.setup {
     disable = {}
   },
   ensure_installed = {
-    'javascript',
-    'tsx',
-    'lua',
-    'json',
+    'html',
+    'php',
     'css',
+    'javascript',
+    'typescript',
+    'tsx',
+    'json',
+    'lua',
     'markdown',
     'markdown_inline'
-  },
-  autotag = {
-    enable = true
   }
 }
