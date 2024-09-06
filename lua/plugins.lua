@@ -52,4 +52,8 @@ packer.startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browser
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }
 end)
